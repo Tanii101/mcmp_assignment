@@ -1,0 +1,9 @@
+make
+ci.exe others\9_coords.coord others\cout_9.dat
+ci.exe others\16_coords.coord others\cout_16.dat
+ci.exe others\4096_coords.coord others\cout_4096.dat
+
+
+gcc -fopenmp -O2 -Wall ompcInsertion.c coordReader.c -o ompci.exe
+set OMP_NUM_THREADS=4
+ompci.exe others\16_coords.coord others\omp_cout_16.dat
